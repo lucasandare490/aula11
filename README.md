@@ -1,10 +1,13 @@
 # Exercícios de JavaScript - Aula 11
 
-Este repositório contém as soluções para os exercícios propostos na aula 11, abordando **Arrays** e **Estruturas de Repetição** em JavaScript. 
+## **Visão Geral do Projeto**
 
-Cada exercício foi desenvolvido em um arquivo separado seguindo o padrão de nomenclatura: **senac_UC13_aula11_qx.js**, onde `x` é substituído pelo número da questão. As funções foram documentadas usando **JSDoc**, e as soluções foram testadas no Node.js.
+Este repositório contém as soluções explicações para os **exercícios de JavaScript** da **Aula 11**, com foco em **Arrays** e **Estruturas de Repetição**. O objetivo é justamente praticar a manipulação de arrays utilizando métodos como `.push()`, `.pop()`, `.shift()`, `.filter()`, e `.includes()`, que são essenciais para dados em JavaScript.
+
+A seguir, vou explicar cada código desenvolvido, abordando o que foi pedido e como cada função foi construída. Cada bloco de código está acompanhado de uma explicação de seu funcionamento e do que ele representa.
 
 ---
+
 
 ## **Questões e Soluções**
 
@@ -15,53 +18,10 @@ Cada exercício foi desenvolvido em um arquivo separado seguindo o padrão de no
   - Remover a última tarefa adicionada usando `.pop()`.
   - Exibir o array final no console.
 - **Como foi resolvido:**
-  - Criamos uma função `gerenciarTarefas` que implementa todas as etapas descritas.
-  - Utilizamos os métodos `.push()` e `.pop()` para manipular o array.
+  - Crie uma função `gerenciarTarefas` que implementa todas as etapas descritas.
+  - Utilizei os métodos `.push()` e `.pop()` para manipular o array. O `.push()` adiciona um novo item ao final do array e o `.pop()` remove o último item.
 
----
-
-### **Questão 2: Gerenciar um estoque**
-- **O que foi pedido:**
-  - Criar um array `estoque` com quatro itens iniciais.
-  - Atualizar o segundo item no array.
-  - Exibir o número total de itens no estoque usando `.length`.
-- **Como foi resolvido:**
-  - A função `gerenciarEstoque` foi implementada para criar e manipular o array, incluindo a atualização do segundo item e a exibição do total de itens.
-
----
-
-### **Questão 3: Calcular médias de alunos**
-- **O que foi pedido:**
-  - Criar um array `alunos` onde cada elemento é um array contendo as notas de um aluno.
-  - Usar um loop aninhado para calcular a média das notas de cada aluno.
-  - Exibir o nome de cada aluno e sua respectiva média.
-- **Como foi resolvido:**
-  - Implementamos a função `calcularMediaAlunos`, que utiliza um array aninhado para armazenar as notas e calcula as médias usando `forEach` e `reduce`.
-
----
-
-### **Questão 4: Exibir palavras em ordem reversa**
-- **O que foi pedido:**
-  - Criar um array `palavras` com pelo menos 5 palavras.
-  - Usar um loop for reverso para exibir cada palavra no console.
-- **Como foi resolvido:**
-  - A função `exibirPalavrasReverso` foi criada para percorrer o array de trás para frente, exibindo cada palavra no console.
-
----
-
-### **Questão 5: Jogo de adivinhação**
-- **O que foi pedido:**
-  - Criar um jogo que peça ao usuário para adivinhar um número entre 1 e 10.
-  - Continuar pedindo números até que o usuário acerte ou digite "sair".
-  - Exibir mensagens para respostas corretas e para o comando "sair".
-- **Como foi resolvido:**
-  - Implementamos a função `jogoAdivinhacao` utilizando `prompt` para interação com o usuário e um loop `while` para manter o jogo ativo até a condição de parada ser atendida.
-
----
-
-## **Documentação das Funções**
-
-### **Questão 1: `gerenciarTarefas`**
+#### **Código**
 ```javascript
 /**
  * Gerencia uma lista de tarefas.
@@ -83,13 +43,22 @@ function gerenciarTarefas() {
 }
 
 gerenciarTarefas();
-Questão 2: gerenciarEstoque
-javascript
-Copiar código
+```
+
+## **Questão 2: Gerenciar um estoque**
+### **O que foi pedido:**
+- Criar um array estoque com quatro itens iniciais.
+- Atualizar o segundo item no array.
+- Exibir o número total de itens no estoque usando .length.
+- Como foi resolvido: Criei uma função gerenciarEstoque que implementa todas as etapas descritas.
+- Utilizei a indexação do array para atualizar o segundo item (acessando o índice 1) e o método .length para exibir o número total de itens.
+
+### ***Código*** 
+```javascript
 /**
  * Gerencia o estoque, permitindo a atualização de itens.
  * 
- * Este script cria um array com quatro itens iniciais, 
+ * Este script cria um array com quatro itens iniciais,
  * atualiza o segundo item do array e exibe o número total de itens.
  * 
  * @function gerenciarEstoque
@@ -98,91 +67,103 @@ function gerenciarEstoque() {
     const estoque = ["Item A", "Item B", "Item C", "Item D"];
 
     // Atualiza o segundo item
-    estoque[1] = "Item B atualizado";
+    estoque[1] = "Item X";
 
-    // Exibe o array atualizado e o total de itens
     console.log("Estoque atualizado:", estoque);
-    console.log("Total de itens:", estoque.length);
+    console.log("Número total de itens no estoque:", estoque.length);
 }
 
 gerenciarEstoque();
-Questão 3: calcularMediaAlunos
-javascript
-Copiar código
+```
+## ***Questão 3: Manipular uma lista de números***
+### ***O que foi pedido:***
+- Criar um array de números inteiros.
+- Adicionar um número ao final do array usando .push().
+- Remover o primeiro número usando .shift().
+- Exibir o array no console.
+- Como foi resolvido:
+Criei uma função manipularNumeros para adicionar e remover números do array. O .push() é usado para adicionar um número ao final do array, e o .shift() remove o primeiro número.
+
+### ***Código***
+```javascript
 /**
- * Calcula a média das notas de alunos e exibe o nome e a média de cada aluno.
+ * Manipula uma lista de números inteiros.
  * 
- * Este script utiliza um array de objetos onde cada objeto representa um aluno
- * e suas respectivas notas. A média das notas é calculada utilizando o método
- * reduce para somar as notas e o forEach para iterar pelos alunos.
+ * Este script cria um array de números inteiros, adiciona
+ * um número ao final do array e remove o primeiro número.
  * 
- * @function calcularMediaAlunos
+ * @function manipularNumeros
  */
-function calcularMediaAlunos() {
-    const alunos = [
-        { nome: "Alice", notas: [8, 7, 9] },
-        { nome: "Bob", notas: [6, 5, 7] },
-        { nome: "Carol", notas: [9, 9, 10] }
-    ];
+function manipularNumeros() {
+    const numeros = [10, 20, 30, 40];
 
-    alunos.forEach((aluno) => {
-        const soma = aluno.notas.reduce((acc, nota) => acc + nota, 0);
-        const media = soma / aluno.notas.length;
+    // Adiciona um número ao final
+    numeros.push(50);
 
-        console.log(`${aluno.nome} tem média: ${media.toFixed(2)}`);
-    });
+    console.log("Números após adicionar:", numeros);
+
+    // Remove o primeiro número
+    numeros.shift();
+
+    console.log("Números após remover o primeiro:", numeros);
 }
 
-calcularMediaAlunos();
-Questão 4: exibirPalavrasReverso
-javascript
-Copiar código
+manipularNumeros();
+```
+### ***Questão 4: Filtrar números positivos***
+## ***O que foi pedido:***
+- Criar um array de números com valores positivos e negativos.
+- Filtrar apenas os números positivos usando o método .filter().
+- Exibir o array resultante no console.
+- Como foi resolvido:
+Criei uma função filtrarPositivos que utiliza o método .filter() para selecionar apenas os números positivos do array. O .filter() retorna um novo array com os valores que atendem à condição.
+
+### ***Código***
+```javascript
 /**
- * Exibe as palavras de um array em ordem reversa.
+ * Filtra os números positivos de uma lista.
  * 
- * Este script recebe um array de palavras e utiliza um loop for reverso
- * para exibir cada palavra no console na ordem inversa.
+ * Este script cria um array de números e filtra
+ * apenas os números positivos usando o método `.filter()`.
  * 
- * @function exibirPalavrasReverso
- * @param {string[]} palavras - Lista de palavras a serem exibidas.
+ * @function filtrarPositivos
  */
-function exibirPalavrasReverso(palavras) {
-    for (let i = palavras.length - 1; i >= 0; i--) {
-        console.log(palavras[i]);
-    }
+function filtrarPositivos() {
+    const numeros = [-10, 15, -5, 30, 40];
+
+    // Filtra os números positivos
+    const positivos = numeros.filter(num => num > 0);
+
+    console.log("Números positivos:", positivos);
 }
 
-exibirPalavrasReverso(["café", "livro", "código", "javascript", "aprendizado"]);
-Questão 5: jogoAdivinhacao
-javascript
-Copiar código
+filtrarPositivos();
+```
+### ***Questão 5: Verificar a presença de um número***
+## O que foi pedido:
+- Criar um array de números.
+- Verificar se um número específico está presente no array usando o método .includes().
+- Exibir o resultado no console.
+- Como foi resolvido:
+- Criei uma função verificarNumero que usa o método .includes() para verificar se um número específico está presente no array. O método .includes() retorna um valor booleano (verdadeiro ou falso).
+
+### ***Código***
+```javascript
 /**
- * Jogo de adivinhação de número entre 1 e 10.
+ * Verifica a presença de um número em uma lista.
  * 
- * Este script gera um número aleatório entre 1 e 10 e solicita ao usuário
- * que adivinhe o número. O jogo continua até que o usuário acerte ou digite "sair".
+ * Este script cria um array de números e verifica se um número
+ * específico está presente no array usando o método `.includes()`.
  * 
- * @function jogoAdivinhacao
+ * @function verificarNumero
  */
-function jogoAdivinhacao() {
-    const numeroSecreto = Math.floor(Math.random() * 10) + 1;
-    let tentativa;
+function verificarNumero() {
+    const numeros = [10, 20, 30, 40, 50];
 
-    while (tentativa !== "sair") {
-        tentativa = prompt("Adivinhe o número entre 1 e 10 ou digite 'sair':");
+    // Verifica se o número 20 está no array
+    const presente = numeros.includes(20);
 
-        if (tentativa === "sair") {
-            console.log("Você saiu do jogo.");
-            break;
-        }
-
-        if (parseInt(tentativa) === numeroSecreto) {
-            console.log("Parabéns! Você acertou!");
-            break;
-        } else {
-            console.log("Tente novamente.");
-        }
-    }
+    console.log("Número 20 está presente:", presente);
 }
 
-jogoAdivinhacao();
+verificarNumero();
